@@ -20,7 +20,7 @@ backend tech:
 browser tech:
 - kit.svelte.dev
 - materializecss.com
-- RxDB
+- rxdb.info
 - mapbox.com
 - socket.io
 
