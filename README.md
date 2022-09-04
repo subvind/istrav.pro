@@ -3,24 +3,28 @@ istrav.pro
 fleet management software
 
 apps:
-- server: 
+- osrm: https://osrm.istrav.dev
+- database: https://couchdb.istrav.dev
+- socket: https://pro.istrav.dev
 - browser: https://istrav.pro
 - mobile: coming soon!
 
-shared technology:
+shared tech:
 - library: https://github.com/trabur/fleet-optimizer
 
-backend technology:
+backend tech:
 - OSRM server for calculating Matrix Distances
 - socket.io server for live GPS tracking
 - CouchDB server for rxdb.info/replication-couchdb.html
 
-browser technology:
+browser tech:
 - kit.svelte.dev
 - materializecss.com
 - RxDB
+- mapbox.com
+- socket.io
 
-mobile technology:
+mobile tech:
 - svelte-native.technology
 
 ## Developing
