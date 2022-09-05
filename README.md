@@ -2,20 +2,20 @@ istrav.pro
 ========
 fleet management software
 
+source code:
+- library: https://github.com/trabur/fleet-optimizer
+- server: https://github.com/trabur/pro.istrav.dev
+- clients:
+  - browser: https://github.com/trabur/istrav.pro
+  - mobile: coming soon!
+
 apps:
 - osrm: https://osrm.istrav.dev
 - database: https://couchdb.istrav.dev
-- socket: https://pro.istrav.dev
-- browser: https://istrav.pro
-- mobile: coming soon!
-
-shared tech:
-- library: https://github.com/trabur/fleet-optimizer
-
-backend tech:
-- OSRM server for calculating Matrix Distances
-- socket.io server for live GPS tracking
-- CouchDB server for rxdb.info/replication-couchdb.html
+- server: https://pro.istrav.dev
+- clients:
+  - browser: https://istrav.pro
+  - mobile: coming soon!
 
 browser tech:
 - kit.svelte.dev
