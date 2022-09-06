@@ -154,8 +154,8 @@
   </ul>
   <li><div class="divider" style="margin: 0; background-color: #111;"></div></li>
   <li>
-    <a href="https://github.com/trabur/istrav-headquarters">
-      <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">{version || 'v0.0.0'}</div>
+    <a href="https://github.com/trabur/istrav.pro" target="_blank">
+      <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">Beta Version</div>
     </a>
   </li>
   <br />
