@@ -76,6 +76,7 @@
     <li>
       <div class="collapsible-header waves-effect"><i class={`material-icons`}>work</i>BUSINESS</div>
       <div class="collapsible-body" style="background: #039be5;">
+        <li class={active === 'industries' ? 'active' : null}><a href="/industries" on:click={() => {active = 'industries'}} class="waves-effect"><i class={`material-icons`}>language</i>Industries</a></li>
         <li class={active === 'fleets' ? 'active' : null}><a href="/fleets" on:click={() => {active = 'fleets'}} class="waves-effect"><i class={`material-icons`}>grid_on</i>Fleets</a></li>
         <li class={active === 'work-orders' ? 'active' : null}><a href="/work-orders" on:click={() => {active = 'work-orders'}} class="waves-effect"><i class={`material-icons`}>format_list_numbered</i>Work Orders</a></li>
         <li class={active === 'transports' ? 'active' : null}><a href="/transports" on:click={() => {active = 'transports'}} class="waves-effect"><i class={`material-icons`}>local_shipping</i>Transports</a></li>
