@@ -13,6 +13,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/uuid": "^8.3.4",
+		"axios": "^0.27.2",
 		"fleet-optimizer": "github:trabur/fleet-optimizer",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
