@@ -57,9 +57,9 @@
 
 <ul id="slide-out" class="sidenav sidenav-fixed" style="width: 300px;">
   
-  <nav>
+  <nav class="light-blue">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center" style="min-width: 150px;">isTrav Pro</a>
+      <a href="#" class="brand-logo center black-text" style="min-width: 150px;">isTrav Pro</a>
     </div>
   </nav>
         
@@ -67,7 +67,7 @@
   <ul class="collapsible">
     <li>
       <div class="collapsible-header waves-effect">ISTRAV.PRO</div>
-      <div class="collapsible-body" style="background: #ffcdd2;">
+      <div class="collapsible-body" style="background: #039be5;">
         <li class={active === 'hosting' ? 'active' : null}><a href="https://istrav.com/production" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>grade</i>Production</a></li>
         <li class={active === 'hosting' ? 'active' : null}><a href="https://istrav.com/solutions" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>check</i>Solutions</a></li>
         <li class={active === 'hosting' ? 'active' : null}><a href="https://istrav.com/apps" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>extension</i>Apps</a></li>
@@ -77,7 +77,7 @@
     </li>
     <li>
       <div class="collapsible-header waves-effect">DESIGN PATTERNS</div>
-      <div class="collapsible-body" style="background: #ffcdd2;">
+      <div class="collapsible-body" style="background: #039be5;">
         <li class={active === 'creational' ? 'active' : null}><a href="/design-patterns/creational" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>grade</i>Creational</a></li>
         <li class={active === 'structural' ? 'active' : null}><a href="/design-patterns/structural" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>check</i>Structural</a></li>
         <li class={active === 'behavioral' ? 'active' : null}><a href="/design-patterns/behavioral" on:click={() => {active = 'hosting'}} class="waves-effect"><i class={`material-icons`}>extension</i>Behavioral</a></li>
@@ -85,7 +85,7 @@
     </li>
     <li>
       <div class="collapsible-header waves-effect">CLIENT AREA</div>
-      <div class="collapsible-body" style="background: #ffcdd2;">
+      <div class="collapsible-body" style="background: #039be5;">
         <li class={active === 'login' ? 'active' : null}><a href="https://istrav.com/client-area/verify" class="waves-effect"><i class={`material-icons`}>exit_to_app</i>Login</a></li>
         <li class={active === 'register' ? 'active' : null}><a href="https://istrav.com/client-area/join" class="waves-effect"><i class={`material-icons`}>person_add</i>Register</a></li>
         {#if !token}
@@ -107,7 +107,7 @@
 
 <style>
   #slide-out {
-    background: #ef9a9a;
+    background: #03a9f4;
   }
 
   .collapsible li {
@@ -116,7 +116,7 @@
   }
 
   .collapsible li.active {
-    background: #ffcdd2;
+    background: #039be5;
   }
 
   .sidenav li > a {
