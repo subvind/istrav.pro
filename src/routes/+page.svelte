@@ -1,9 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  import { backend, sidebarActive, sidebarMode } from '../stores';
   import pro from 'fleet-optimizer'
-  
   import { v4 as uuidv4 } from 'uuid';
+
+  let api
+  backend.subscribe(value => {
+		api = value
+	})
+  sidebarMode.set('application')
+  sidebarActive.set('intro')
 
   let purposes = ['vehicle routing', 'fleet optimization', 'location tracking', 'work orders', 'transporting', 'inspection & maintenance', 'fuel history', 'parts & inventory', 'customer management' ]
   let purposeIndex = 0

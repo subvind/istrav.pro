@@ -1,7 +1,16 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
+  import { backend, sidebarActive, sidebarMode } from '../../stores';
   import Table from "../../components/Table.svelte"
   import * as gridjs from "gridjs";
-import { onMount } from "svelte";
+  
+  let api
+  backend.subscribe(value => {
+		api = value
+	})
+  sidebarMode.set('fleets')
+  sidebarActive.set('vehicles')
 
   let search = {
     enabled: true

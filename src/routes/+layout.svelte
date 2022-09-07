@@ -10,7 +10,7 @@
   backend.subscribe(value => {
 		api = value
 	})
-  let sidebarIsOpen = true
+  let sidebarIsOpen = false
   sidebarVisibility.subscribe(value => {
 		sidebarIsOpen = value
 	})
@@ -24,21 +24,8 @@
 	})
   
   onMount(() => {
-    let hostname = window.location.hostname
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      // configure server
-      backend.set(`http://${hostname}:1337`)
-    } else {
-      // grab last 2 host words from url
-      let words = hostname.split('.')
-      let tld = words.slice((words.length - 2), words.length).join('.')
-  
-      // configure server
-      backend.set(`https://api.${tld}`)
-    }
-    
-    // log
-    console.log('api:', api)
+    backend.set(`https://pro.istrav.dev`)
+
     loading = false
   })
 </script>
@@ -47,8 +34,8 @@
   <!-- do nothing -->
 {:else}
   <Navigation active={sidebarActiveId} mode={sidebarModeId} isOpen={sidebarIsOpen} />
-  <div class="detail">
-    <Header />
+  <div class="detail" style={sidebarIsOpen ? 'padding-left: calc(300px);' : 'padding-left: 0;'}>
+    <Header isOpen={sidebarIsOpen}/>
     <div class="content">
       <slot></slot>
     </div>
@@ -64,7 +51,7 @@
   }
 
   .detail {
-    margin-left: 300px;
+    overflow: hidden;
   }
 
   .content {

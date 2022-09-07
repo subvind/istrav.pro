@@ -1,6 +1,28 @@
+<script lang="ts">
+  import { sidebarVisibility } from '../stores';
+  
+  export let isOpen: boolean;
+
+  let visible: boolean
+  sidebarVisibility.subscribe(value => {
+		visible = value
+	})
+
+  function toggleSidebar() {
+    if (visible) {
+      sidebarVisibility.set(false)
+    } else {
+      sidebarVisibility.set(true)
+    }
+  }
+</script>
+
 <div class="navbar-fixed">
-  <nav class="white">
+  <nav class="white" style={isOpen ? 'width: calc(100% - 300px);' : 'width: 100%;'}>
     <div class="nav-wrapper">
+      <ul class="left">
+        <a href="#!" on:click={() => toggleSidebar()} class="black-text left"><i class="material-icons left">menu</i></a>
+      </ul>
       <a href="#" class="btn transparent black-text"><i class="material-icons left" style="line-height: 34px; margin-right: 5px;">assignment_ind</i> annonymous</a>
       <ul class="right">
         <li><a href="#" class="black-text right"><i class="material-icons left">notifications</i>(2)</a></li>
@@ -18,7 +40,6 @@
 <style>
   nav {
     padding: 0 1em;
-    width: calc(100% - 300px);
   }
 
   nav .material-icons {
