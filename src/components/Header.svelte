@@ -1,7 +1,7 @@
 <div class="navbar-fixed">
   <nav class="white">
     <div class="nav-wrapper">
-      <a href="#" class="btn transparent black-text"><i class="material-icons left" style="line-height: 34px; margin-right: 5px;">assignment_ind</i> travis.burandt@gmail.com</a>
+      <a href="#" class="btn transparent black-text"><i class="material-icons left" style="line-height: 34px; margin-right: 5px;">assignment_ind</i> annonymous</a>
       <ul class="right">
         <li><a href="#" class="black-text right"><i class="material-icons left">notifications</i>(2)</a></li>
         <li><a href="#" class="black-text right"><i class="material-icons left">format_list_numbered</i>Work Orders (2)</a></li>
