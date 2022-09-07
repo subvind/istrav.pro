@@ -174,7 +174,7 @@
   <li><div class="divider" style="margin: 0; background-color: #111;"></div></li>
   <li>
     <a href="https://github.com/trabur/istrav.pro" target="_blank">
-      <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">Beta Version {mode}</div>
+      <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">Beta Version</div>
     </a>
   </li>
   <br />
