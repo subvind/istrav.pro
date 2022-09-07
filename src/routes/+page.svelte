@@ -4,6 +4,9 @@
   import { backend, sidebarActive, sidebarMode } from '../stores';
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
+  
+  import FleetManagementSoftware from '../components/FleetManagementSoftware.svelte';
+  import Features from '../components/Features.svelte';
 
   let api
   backend.subscribe(value => {
@@ -11,9 +14,6 @@
 	})
   sidebarMode.set('application')
   sidebarActive.set('intro')
-
-  let purposes = ['vehicle routing', 'fleet optimization', 'location tracking', 'work orders', 'transporting', 'inspection & maintenance', 'fuel history', 'parts & inventory', 'customer management' ]
-  let purposeIndex = 0
 
   onMount(async () => {
     let fleetOptimizer = pro.FleetOptimizer.getInstance()
@@ -145,40 +145,9 @@
       destroy(db)
     }
     test()
-
-    setInterval(() =>{
-      ++purposeIndex
-      purposeIndex = purposeIndex % purposes.length
-    }, 5000)
   })
 
 </script>
 
-<br />
-<br />
-<div class="container">
-  <h4 class="rated light-green-text">#1 Fleet Management Software</h4>
-  <h1 class="taf-part1">The application for</h1>
-  <h1 class="taf-part2">{purposes[purposeIndex]}</h1>
-  <p>isTrav Pro is the #1 Fleet Management Software that is FREE up until 25 accounts; all of our source code is licensed as: Fair Source 25 (v0.9). Our API/Library (<a href="https://github.com/trabur/fleet-optimizer" target="_blank">fleet-optimizer</a>) is the best because of it's FMS features plus reactive and offline capabilities. What makes it powerful is TypeScript which allows us to build for web, mobile, desktop, and Internet of Things all under the same roof. We already have a Web Browser App (<a href="https://istrav.pro" target="_blank">istrav.pro</a>) and Mobile App (<a href="https://github.com/trabur/istrav.pro" target="_blank">coming soon!</a>) currently in beta. Continue exploring as an annonymous guest with limited priveledges or consider starting a free account with isTrav Pro today! We have a lot to show you :)</p>
-  <a href="/register" class="btn btn-large green lighten-2">Take a tour</a>
-  <a href="/register" class="btn btn-large white black-text">Start free Account</a>
-</div>
-
-<style>
-  .rated {
-    font-size: 1.5em;
-  }
-
-  .taf-part1 {
-    font-size: 3.5em;
-    font-weight: 900;
-    margin: 0;
-  }
-  .taf-part2 {
-    font-size: 3.5em;
-    font-weight: 900;
-    margin: 0;
-    text-decoration: underline #8bc34a;
-  }
-</style>
+<FleetManagementSoftware />
+<Features />
