@@ -37,7 +37,7 @@
 </script>
 
 {#if loading === false}
-  <Banner icon="security" name={vehicle.name}>
+  <Banner icon="directions_bus" name={vehicle.name}>
     <a href="/dashboard" class="breadcrumb">Home</a>
     <a href="/fleets" class="breadcrumb">Fleets</a>
     <a href="/fleets/vehicles" class="breadcrumb">Vehicles</a>
