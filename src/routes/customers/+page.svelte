@@ -38,9 +38,9 @@
       sort: false,
       hidden: false,
       formatter: (cell: any, row: any) => {
-        return gridjs.h('button', {
+        return gridjs.h('a', {
+          href: `/customers/${row.cells[0].data}`,
           className: 'btn btn-small blue lighten-2 right',
-          onClick: () => {window.location.href = `/customers/${row.cells[0].data}`}
         }, 'Edit');
       }
     },

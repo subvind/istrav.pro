@@ -1,29 +1,29 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import Banner from '../../../components/Banner.svelte'
+  import Banner from '../../../../components/Banner.svelte'
 
-  import { sidebarActive, sidebarMode } from '../../../stores';
+  import { sidebarActive, sidebarMode } from '../../../../stores';
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
   
   export let data: any;
-  let customer: any;
+  let vehicle: any;
 
-  sidebarMode.set('business')
-  sidebarActive.set('customers')
+  sidebarMode.set('fleets')
+  sidebarActive.set('vehicles')
 
   let loading: boolean = true
 
   onMount(async () => {
     let fleetOptimizer = pro.FleetOptimizer.getInstance()
     let db = await fleetOptimizer.db()
-    customer = await db.customer.findOne({
+    vehicle = await db.vehicle.findOne({
       selector: {
-        id: data.customerId
+        id: data.vehicleId
       }
     }).exec()
-    console.dir(customer)
+    console.dir(vehicle)
     
     loading = false
 
@@ -37,10 +37,11 @@
 </script>
 
 {#if loading === false}
-  <Banner icon="security" name={customer.name}>
+  <Banner icon="security" name={vehicle.name}>
     <a href="/dashboard" class="breadcrumb">Home</a>
-    <a href="/customers" class="breadcrumb">Customers</a>
-    <a href={`/customers/${data.customerId}`} class="breadcrumb">View</a>
+    <a href="/fleets" class="breadcrumb">Fleets</a>
+    <a href="/fleets/vehicles" class="breadcrumb">Vehicles</a>
+    <a href={`/fleets/vehicles/${data.vehicleId}`} class="breadcrumb">View</a>
   </Banner>
 
   <div class="container">
@@ -57,6 +58,6 @@
       <li><a href="#!" class="light-blue-text"><i class="material-icons">cloud</i>five</a></li>
     </ul>
   
-    {JSON.stringify(customer)}
+    {JSON.stringify(vehicle)}
   </div>
 {/if}

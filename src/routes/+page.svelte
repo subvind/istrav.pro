@@ -1,17 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { backend, sidebarActive, sidebarMode } from '../stores';
+  import { sidebarActive, sidebarMode } from '../stores';
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
   
   import FleetManagementSoftware from '../components/FleetManagementSoftware.svelte';
   import Features from '../components/Features.svelte';
 
-  let api
-  backend.subscribe(value => {
-		api = value
-	})
   sidebarMode.set('application')
   sidebarActive.set('intro')
 
@@ -28,7 +24,7 @@
       // create vehicles
       let v1 = db.vehicle.insert({
         id: uuidv4(),
-        licensePlate: 'SDF123'
+        name: 'big cure'
       })
       
       // create customers
@@ -80,7 +76,7 @@
       // destroy vehicles
       await db.vehicle.find({
         selector: {
-          licensePlate: 'SDF123'
+          name: 'big cure'
         }
       }).remove()
   
@@ -138,7 +134,7 @@
       fleetOptimizer.calculate(fleet1).TSP()
   
       console.log('fleet1', fleet1.name)
-      console.log('vehicle1', vehicle1.licensePlate)
+      console.log('vehicle1', vehicle1.name)
       console.log('location1', location1.name)
   
       // teardown
