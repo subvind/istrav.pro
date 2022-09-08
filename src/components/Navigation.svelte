@@ -171,6 +171,7 @@
         <li class={active === 'intro' ? 'active' : null}><a href="/" on:click={() => {active = 'intro'}} class="waves-effect"><i class={`material-icons`}>power_settings_new</i>Intro</a></li>
         <li class={active === 'tenant' ? 'active' : null}><a href="/application/tenant" on:click={() => {active = 'tenant'}} class="waves-effect"><i class={`material-icons`}>business</i>Tenant</a></li>
         <li class={active === 'accounts' ? 'active' : null}><a href="/application/accounts" on:click={() => {active = 'accounts'}} class="waves-effect"><i class={`material-icons`}>assignment_ind</i>Accounts</a></li>
+        <li class={active === 'notifications' ? 'active' : null}><a href="/application/notifications" on:click={() => {active = 'notifications'}} class="waves-effect"><i class={`material-icons`}>notifications</i>Notifications</a></li>
         <li class={active === 'reports' ? 'active' : null}><a href="/application/reports" on:click={() => {active = 'reports'}} class="waves-effect"><i class={`material-icons`}>receipt</i>Reports</a></li>
       </div>
     </li>
