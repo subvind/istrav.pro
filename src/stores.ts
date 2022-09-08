@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 
 export let backend = writable('');
+export let pro = writable('');
 export let sidebarVisibility = writable(true)
 export let sidebarActive = writable('')
 export let sidebarMode = writable('')

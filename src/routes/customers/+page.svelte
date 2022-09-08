@@ -1,16 +1,19 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import { backend, sidebarActive, sidebarMode } from '../../stores';
   import Table from "../../components/Table.svelte"
   import * as gridjs from "gridjs";
+
+  import { backend, sidebarActive, sidebarMode } from '../../stores';
+  import pro from 'fleet-optimizer'
+  import { v4 as uuidv4 } from 'uuid';
   
   let api
   backend.subscribe(value => {
 		api = value
 	})
-  sidebarMode.set('fleets')
-  sidebarActive.set('vehicles')
+  sidebarMode.set('business')
+  sidebarActive.set('customers')
 
   let search = {
     enabled: true
@@ -18,7 +21,7 @@
   let sort = true
   let pagination = {
     enabled: true,
-    limit: 2,
+    limit: 10,
     summary: true
   }
   let columns = [
@@ -37,18 +40,30 @@
       }
     },
   ]
-  let data = [
-    ['Tom', 'john@example.com'],
-    ['Joe', 'mike@gmail.com'],
-    ['Joe1', 'mike1@gmail.com'],
-    ['Joe2', 'mike2@gmail.com'],
+  let data: any = [
+    // ['Tom', 'john@example.com'],
+    // ['Joe', 'mike@gmail.com'],
+    // ['Joe1', 'mike1@gmail.com'],
+    // ['Joe2', 'mike2@gmail.com'],
   ]
 
-  onMount(() => {
+  let loading: boolean = true
+  onMount(async () => {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, {
       alignment: 'right'
     });
+
+    let fleetOptimizer = pro.FleetOptimizer.getInstance()
+    let db = await fleetOptimizer.db()
+    let customers = await db.customer.find().exec()
+    console.dir(customers)
+
+    customers.forEach((value: any) => {
+      data.push([value.id, value.name])
+    })
+    
+    loading = false
   })
 </script>
 
@@ -56,13 +71,12 @@
   <br />
   <br />
   <div class="container">
-    <h1>Vehicles</h1>
+    <h1>Customers</h1>
     <nav style="background: transparent; box-shadow: none; height: 32px; line-height: 32px;">
       <div class="nav-wrapper">
         <div class="col s12">
           <a href="/dashboard" class="breadcrumb">Home</a>
-          <a href="/fleets" class="breadcrumb">Fleets</a>
-          <a href="/vehicles" class="breadcrumb">Vehicles</a>
+          <a href="/customers" class="breadcrumb">Customers</a>
         </div>
       </div>
     </nav>
@@ -83,8 +97,14 @@
     <li><a href="#!" class="light-blue-text"><i class="material-icons">view_module</i>four</a></li>
     <li><a href="#!" class="light-blue-text"><i class="material-icons">cloud</i>five</a></li>
   </ul>
-  <Table columns={columns} data={data} search={search} pagination={pagination} sort={sort} />
+  {#if loading === false}
+    <Table columns={columns} data={data} search={search} pagination={pagination} sort={sort} />
+  {/if}
 </div>
+<br />
+<br />
+<br />
+<br />
 
 <style>
   .banner {

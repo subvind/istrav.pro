@@ -111,7 +111,7 @@
       </div>
     </li>
     <li class={mode === 'work-orders' ? 'active' : ''}>
-      <div class="collapsible-header waves-effect" on:click={() => toggleMode('work-orders', 2)}><i class={`material-icons`}>format_list_numbered</i><span style="width: 100%;">WORK ORDERS</span> <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'work-orders' ? 'expand_more' : 'chevron_left'}</i></div>
+      <div class="collapsible-header waves-effect" on:click={() => toggleMode('work-orders', 2)}><i class={`material-icons`}>format_list_numbered</i><span style="width: 300px;">WORK ORDERS</span> <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'work-orders' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
         <li class={active === 'estimates' ? 'active' : null}><a href="/estimates" on:click={() => {active = 'estimates'}} class="waves-effect"><i class={`material-icons`}>straighten</i>Estimates</a></li>
         <li class={active === 'jobs' ? 'active' : null}><a href="/jobs" on:click={() => {active = 'jobs'}} class="waves-effect"><i class={`material-icons`}>av_timer</i>Jobs</a></li>
@@ -169,9 +169,9 @@
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('application', 9)}><i class={`material-icons`}>apps</i>APPLICATION <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'application' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">        
         <li class={active === 'intro' ? 'active' : null}><a href="/" on:click={() => {active = 'intro'}} class="waves-effect"><i class={`material-icons`}>power_settings_new</i>Intro</a></li>
-        <li class={active === 'tenant' ? 'active' : null}><a href="/tenant" on:click={() => {active = 'tenant'}} class="waves-effect"><i class={`material-icons`}>business</i>Tenant</a></li>
-        <li class={active === 'accounts' ? 'active' : null}><a href="/accounts" on:click={() => {active = 'accounts'}} class="waves-effect"><i class={`material-icons`}>assignment_ind</i>Accounts</a></li>
-        <li class={active === 'reports' ? 'active' : null}><a href="/reports" on:click={() => {active = 'reports'}} class="waves-effect"><i class={`material-icons`}>receipt</i>Reports</a></li>
+        <li class={active === 'tenant' ? 'active' : null}><a href="/application/tenant" on:click={() => {active = 'tenant'}} class="waves-effect"><i class={`material-icons`}>business</i>Tenant</a></li>
+        <li class={active === 'accounts' ? 'active' : null}><a href="/application/accounts" on:click={() => {active = 'accounts'}} class="waves-effect"><i class={`material-icons`}>assignment_ind</i>Accounts</a></li>
+        <li class={active === 'reports' ? 'active' : null}><a href="/application/reports" on:click={() => {active = 'reports'}} class="waves-effect"><i class={`material-icons`}>receipt</i>Reports</a></li>
       </div>
     </li>
   </ul>

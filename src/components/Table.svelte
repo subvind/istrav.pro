@@ -5,7 +5,7 @@
   import "gridjs/dist/theme/mermaid.css";
 
   export let columns: any
-  export let data: any
+  export let data: any = []
   export let search: any
   export let pagination: any
   export let sort: boolean
@@ -24,4 +24,6 @@
   });
 </script>
 
-<div id="wrapper"></div>
+{#if data}
+  <div id="wrapper"></div>
+{/if}

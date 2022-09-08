@@ -1,6 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-	import { backend, sidebarVisibility, sidebarActive, sidebarMode } from '../stores.js';
+	
+  import { backend, sidebarVisibility, sidebarActive, sidebarMode } from '../stores.js';
+  import pro from 'fleet-optimizer'
+
   import Navigation from "../components/Navigation.svelte"
   import Credits from "../components/Credits.svelte"
   import Header from "../components/Header.svelte"
@@ -27,6 +30,11 @@
     backend.set(`https://pro.istrav.dev`)
 
     loading = false
+
+    setTimeout(async () => {
+      let fleetOptimizer = pro.FleetOptimizer.getInstance()
+      let database = await fleetOptimizer.database(pro.database.browser)
+    }, 0)
   })
 </script>
 

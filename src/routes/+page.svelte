@@ -117,7 +117,7 @@
   
     async function test () {
       // required storage system
-      let db = await fleetOptimizer.database(pro.database.browser)
+      let db = await fleetOptimizer.db()
   
       // setup
       create(db)
@@ -142,7 +142,7 @@
       console.log('location1', location1.name)
   
       // teardown
-      destroy(db)
+      // destroy(db)
     }
     test()
   })
