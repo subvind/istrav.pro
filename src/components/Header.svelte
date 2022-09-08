@@ -28,7 +28,7 @@
       </ul>
       <ul class="right">
         <li><a href="#" class="black-text right"><i class="material-icons left">local_offer</i>Tasks (2)</a></li>
-        <li><a href="/accounts" class="btn transparent black-text"><i class="material-icons left" style="line-height: 34px; margin-right: 5px;">grid_on</i> fleet1</a></li>
+        <li><a href="/fleets" class="btn transparent black-text"><i class="material-icons left" style="line-height: 34px; margin-right: 5px;">grid_on</i> F1337</a></li>
         <!-- <li><a href="#" class="black-text"><i class="material-icons left">timer</i>10s</a></li>
         <li><a href="#" class="black-text"><i class="material-icons left">format_list_numbered</i>(16)</a></li>
         <li><a href="#" class="black-text"><i class="material-icons left">map</i>8 miles</a></li>

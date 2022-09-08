@@ -18,7 +18,7 @@
       // create fleet
       db.fleet.insert({    
         id: uuidv4(),
-        name: 'Expert Services'
+        name: 'F1337'
       })
   
       // create vehicles
