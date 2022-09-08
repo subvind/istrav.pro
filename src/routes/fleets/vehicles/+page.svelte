@@ -45,7 +45,7 @@
         return gridjs.h('a', {
           href: `/fleets/vehicles/${row.cells[0].data}`,
           className: 'btn btn-small blue lighten-2 right',
-        }, 'Edit');
+        }, 'VIEW');
       }
     },
   ]
