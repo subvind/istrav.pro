@@ -1,17 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  import Banner from '../../components/Banner.svelte'
   import Table from "../../components/Table.svelte"
   import * as gridjs from "gridjs";
 
-  import { backend, sidebarActive, sidebarMode } from '../../stores';
+  import { sidebarActive, sidebarMode } from '../../stores';
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
   
-  let api
-  backend.subscribe(value => {
-		api = value
-	})
   sidebarMode.set('business')
   sidebarActive.set('customers')
 
@@ -25,17 +22,25 @@
     summary: true
   }
   let columns = [
-    'Name',
-    'VIN',
+    {
+      name: 'Id',
+      width: '100px',
+      sort: false,
+      formatter: (cell: any, row: any) => {
+        return gridjs.h('div', {
+          style: 'width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;',
+        }, row.cells[0].data);
+      }
+    },
+    'name',
     { 
       name: 'Actions',
-      width: '150px',
       sort: false,
-
+      hidden: false,
       formatter: (cell: any, row: any) => {
         return gridjs.h('button', {
           className: 'btn btn-small blue lighten-2 right',
-          onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
+          onClick: () => {window.location.href = `/customers/${row.cells[0].data}`}
         }, 'Edit');
       }
     },
@@ -67,23 +72,11 @@
   })
 </script>
 
-<div class="banner">
-  <br />
-  <br />
-  <div class="container">
-    <h1>Customers</h1>
-    <nav style="background: transparent; box-shadow: none; height: 32px; line-height: 32px;">
-      <div class="nav-wrapper">
-        <div class="col s12">
-          <a href="/dashboard" class="breadcrumb">Home</a>
-          <a href="/customers" class="breadcrumb">Customers</a>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <br />
-  <br />
-</div>
+<Banner icon="security" name="Customers">
+  <a href="/dashboard" class="breadcrumb">Home</a>
+  <a href="/customers" class="breadcrumb">Customers</a>
+</Banner>
+
 <div class="container">
   <!-- Dropdown Trigger -->
   <a class='dropdown-trigger btn-floating btn-large right blue lighten-2' style="position: float; margin-top: -2em;" href='#' data-target='dropdownMore'><i class="material-icons">more_vert</i></a>
@@ -105,19 +98,3 @@
 <br />
 <br />
 <br />
-
-<style>
-  .banner {
-    background: #ddd;
-    min-height: 100px;
-    overflow: hidden;
-  }
-  .banner h1 {
-    font-size: 3em;
-    margin: 0 0 0.2em;
-  }
-  .banner .breadcrumb,
-  .banner .breadcrumb:before {
-    color: #000;
-  }
-</style>

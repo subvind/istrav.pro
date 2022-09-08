@@ -1,15 +1,16 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import { backend, sidebarActive, sidebarMode } from '../../stores';
-  import Table from "../../components/Table.svelte"
+  import Banner from "../../../components/Banner.svelte";
+
+  import Table from "../../../components/Table.svelte"
   import * as gridjs from "gridjs";
-  
-  let api
-  backend.subscribe(value => {
-		api = value
-	})
-  sidebarMode.set('fleets')
+
+  import { sidebarActive, sidebarMode } from '../../../stores';
+  import pro from 'fleet-optimizer'
+  import { v4 as uuidv4 } from 'uuid';
+
+  sidebarMode.set('business')
   sidebarActive.set('vehicles')
 
   let search = {
@@ -18,17 +19,28 @@
   let sort = true
   let pagination = {
     enabled: true,
-    limit: 2,
+    limit: 10,
     summary: true
   }
   let columns = [
-    'Name',
-    'VIN',
+    {
+      name: 'Id',
+      width: '100px',
+      sort: false,
+      formatter: (cell: any, row: any) => {
+        return gridjs.h('div', {
+          style: 'width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;',
+        }, row.cells[0].data);
+      }
+    },
+    'name',
+    'color',
+    'make',
+    'model',
     { 
       name: 'Actions',
-      width: '150px',
       sort: false,
-
+      hidden: false,
       formatter: (cell: any, row: any) => {
         return gridjs.h('button', {
           className: 'btn btn-small blue lighten-2 right',
@@ -37,39 +49,40 @@
       }
     },
   ]
-  let data = [
-    ['Tom', 'john@example.com'],
-    ['Joe', 'mike@gmail.com'],
-    ['Joe1', 'mike1@gmail.com'],
-    ['Joe2', 'mike2@gmail.com'],
+  let data: any = [
+    // ['Tom', 'john@example.com'],
+    // ['Joe', 'mike@gmail.com'],
+    // ['Joe1', 'mike1@gmail.com'],
+    // ['Joe2', 'mike2@gmail.com'],
   ]
 
-  onMount(() => {
+  let loading: boolean = true
+  onMount(async () => {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, {
       alignment: 'right'
     });
+
+    let fleetOptimizer = pro.FleetOptimizer.getInstance()
+    let db = await fleetOptimizer.db()
+    let vehicles = await db.vehicle.find().exec()
+    console.dir(vehicles)
+
+    vehicles.forEach((value: any) => {
+      data.push([value.id, value.name, value.color, value.make, value.model])
+    })
+    
+    loading = false
   })
 </script>
 
-<div class="banner">
-  <br />
-  <br />
-  <div class="container">
-    <h1>Vehicles</h1>
-    <nav style="background: transparent; box-shadow: none; height: 32px; line-height: 32px;">
-      <div class="nav-wrapper">
-        <div class="col s12">
-          <a href="/dashboard" class="breadcrumb">Home</a>
-          <a href="/fleets" class="breadcrumb">Fleets</a>
-          <a href="/vehicles" class="breadcrumb">Vehicles</a>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <br />
-  <br />
-</div>
+
+<Banner icon="directions_bus" name="Vehicles">
+  <a href="/dashboard" class="breadcrumb">Home</a>
+  <a href="/fleets" class="breadcrumb">Fleets</a>
+  <a href="/vehicles" class="breadcrumb">Vehicles</a>
+</Banner>
+
 <div class="container">
   <!-- Dropdown Trigger -->
   <a class='dropdown-trigger btn-floating btn-large right blue lighten-2' style="position: float; margin-top: -2em;" href='#' data-target='dropdownMore'><i class="material-icons">more_vert</i></a>
@@ -83,8 +96,14 @@
     <li><a href="#!" class="light-blue-text"><i class="material-icons">view_module</i>four</a></li>
     <li><a href="#!" class="light-blue-text"><i class="material-icons">cloud</i>five</a></li>
   </ul>
-  <Table columns={columns} data={data} search={search} pagination={pagination} sort={sort} />
+  {#if loading === false}
+    <Table columns={columns} data={data} search={search} pagination={pagination} sort={sort} />
+  {/if}
 </div>
+<br />
+<br />
+<br />
+<br />
 
 <style>
   .banner {

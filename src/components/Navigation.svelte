@@ -103,65 +103,65 @@
     <li class={mode === 'fleets' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('fleets', 1)}><i class={`material-icons`}>grid_on</i>FLEETS <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'fleets' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'abilities' ? 'active' : null}><a href="/abilities" on:click={() => {active = 'abilities'}} class="waves-effect"><i class={`material-icons`}>star</i>Abilities</a></li>
-        <li class={active === 'vehicles' ? 'active' : null}><a href="/vehicles" on:click={() => {active = 'vehicles'}} class="waves-effect"><i class={`material-icons`}>directions_bus</i>Vehicles</a></li>
-        <li class={active === 'equipment' ? 'active' : null}><a href="/equipment" on:click={() => {active = 'equipment'}} class="waves-effect"><i class={`material-icons`}>rv_hookup</i>Equipment</a></li>
-        <li class={active === 'professionals' ? 'active' : null}><a href="/professionals" on:click={() => {active = 'professionals'}} class="waves-effect"><i class={`material-icons`}>contacts</i>Professionals</a></li>
-        <li class={active === 'tasks' ? 'active' : null}><a href="/tasks" on:click={() => {active = 'tasks'}} class="waves-effect"><i class={`material-icons`}>local_offer</i>Tasks</a></li>
+        <li class={active === 'abilities' ? 'active' : null}><a href="/fleets/abilities" on:click={() => {active = 'abilities'}} class="waves-effect"><i class={`material-icons`}>star</i>Abilities</a></li>
+        <li class={active === 'vehicles' ? 'active' : null}><a href="/fleets/vehicles" on:click={() => {active = 'vehicles'}} class="waves-effect"><i class={`material-icons`}>directions_bus</i>Vehicles</a></li>
+        <li class={active === 'equipment' ? 'active' : null}><a href="/fleets/equipment" on:click={() => {active = 'equipment'}} class="waves-effect"><i class={`material-icons`}>rv_hookup</i>Equipment</a></li>
+        <li class={active === 'professionals' ? 'active' : null}><a href="/fleets/professionals" on:click={() => {active = 'professionals'}} class="waves-effect"><i class={`material-icons`}>contacts</i>Professionals</a></li>
+        <li class={active === 'tasks' ? 'active' : null}><a href="/fleets/tasks" on:click={() => {active = 'tasks'}} class="waves-effect"><i class={`material-icons`}>local_offer</i>Tasks</a></li>
       </div>
     </li>
     <li class={mode === 'work-orders' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('work-orders', 2)}><i class={`material-icons`}>format_list_numbered</i><span style="width: 300px;">WORK ORDERS</span> <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'work-orders' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'estimates' ? 'active' : null}><a href="/estimates" on:click={() => {active = 'estimates'}} class="waves-effect"><i class={`material-icons`}>straighten</i>Estimates</a></li>
-        <li class={active === 'jobs' ? 'active' : null}><a href="/jobs" on:click={() => {active = 'jobs'}} class="waves-effect"><i class={`material-icons`}>av_timer</i>Jobs</a></li>
-        <li class={active === 'invoices' ? 'active' : null}><a href="/invoices" on:click={() => {active = 'invoices'}} class="waves-effect"><i class={`material-icons`}>attach_money</i>Invoices</a></li>
+        <li class={active === 'estimates' ? 'active' : null}><a href="/work-orders/estimates" on:click={() => {active = 'estimates'}} class="waves-effect"><i class={`material-icons`}>straighten</i>Estimates</a></li>
+        <li class={active === 'jobs' ? 'active' : null}><a href="/work-orders/jobs" on:click={() => {active = 'jobs'}} class="waves-effect"><i class={`material-icons`}>av_timer</i>Jobs</a></li>
+        <li class={active === 'invoices' ? 'active' : null}><a href="/work-orders/invoices" on:click={() => {active = 'invoices'}} class="waves-effect"><i class={`material-icons`}>attach_money</i>Invoices</a></li>
       </div>
     </li>
     <li class={mode === 'transports' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('transports', 3)}><i class={`material-icons`}>local_shipping</i>TRANSPORTS <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'transports' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'pickups' ? 'active' : null}><a href="/pickups" on:click={() => {active = 'pickups'}} class="waves-effect"><i class={`material-icons`}>file_upload</i>Pickups</a></li>
-        <li class={active === 'deliveries' ? 'active' : null}><a href="/deliveries" on:click={() => {active = 'deliveries'}} class="waves-effect"><i class={`material-icons`}>file_download</i>Deliveries</a></li>
+        <li class={active === 'pickups' ? 'active' : null}><a href="/transports/pickups" on:click={() => {active = 'pickups'}} class="waves-effect"><i class={`material-icons`}>file_upload</i>Pickups</a></li>
+        <li class={active === 'deliveries' ? 'active' : null}><a href="/transports/deliveries" on:click={() => {active = 'deliveries'}} class="waves-effect"><i class={`material-icons`}>file_download</i>Deliveries</a></li>
       </div>
     </li>
     <li class={mode === 'customers' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('customers', 4)}><i class={`material-icons`}>security</i>CUSTOMERS <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'customers' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'contacts' ? 'active' : null}><a href="/contacts" on:click={() => {active = 'contacts'}} class="waves-effect"><i class={`material-icons`}>person</i>Contacts</a></li>
-        <li class={active === 'locations' ? 'active' : null}><a href="/locations" on:click={() => {active = 'locations'}} class="waves-effect"><i class={`material-icons`}>location_on</i>Locations</a></li>
+        <li class={active === 'contacts' ? 'active' : null}><a href="/customers/contacts" on:click={() => {active = 'contacts'}} class="waves-effect"><i class={`material-icons`}>person</i>Contacts</a></li>
+        <li class={active === 'locations' ? 'active' : null}><a href="/customers/locations" on:click={() => {active = 'locations'}} class="waves-effect"><i class={`material-icons`}>location_on</i>Locations</a></li>
       </div>
     </li>
     <li class={mode === 'places' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('places', 5)}><i class={`material-icons`}>public</i>PLACES <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'places' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'stores' ? 'active' : null}><a href="/stores" on:click={() => {active = 'stores'}} class="waves-effect"><i class={`material-icons`}>local_convenience_store</i>Stores</a></li>
-        <li class={active === 'factories' ? 'active' : null}><a href="/factories" on:click={() => {active = 'factories'}} class="waves-effect"><i class={`material-icons`}>location_city</i>Factories</a></li>
-        <li class={active === 'warehouses' ? 'active' : null}><a href="/warehouses" on:click={() => {active = 'warehouses'}} class="waves-effect"><i class={`material-icons`}>home</i>Warehouses</a></li>
+        <li class={active === 'stores' ? 'active' : null}><a href="/places/stores" on:click={() => {active = 'stores'}} class="waves-effect"><i class={`material-icons`}>local_convenience_store</i>Stores</a></li>
+        <li class={active === 'factories' ? 'active' : null}><a href="/places/factories" on:click={() => {active = 'factories'}} class="waves-effect"><i class={`material-icons`}>location_city</i>Factories</a></li>
+        <li class={active === 'warehouses' ? 'active' : null}><a href="/places/warehouses" on:click={() => {active = 'warehouses'}} class="waves-effect"><i class={`material-icons`}>home</i>Warehouses</a></li>
       </div>
     </li>
     <li class={mode === 'things' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('things', 6)}><i class={`material-icons`}>extension</i>THINGS <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'things' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'tools' ? 'active' : null}><a href="/tools" on:click={() => {active = 'tools'}} class="waves-effect"><i class={`material-icons`}>highlight</i>Tools</a></li>
-        <li class={active === 'products' ? 'active' : null}><a href="/products" on:click={() => {active = 'products'}} class="waves-effect"><i class={`material-icons`}>shopping_cart</i>Products</a></li>
+        <li class={active === 'tools' ? 'active' : null}><a href="/things/tools" on:click={() => {active = 'tools'}} class="waves-effect"><i class={`material-icons`}>highlight</i>Tools</a></li>
+        <li class={active === 'products' ? 'active' : null}><a href="/things/products" on:click={() => {active = 'products'}} class="waves-effect"><i class={`material-icons`}>shopping_cart</i>Products</a></li>
       </div>
     </li>
     <li class={mode === 'history' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('history', 7)}><i class={`material-icons`}>archive</i>HISTORY <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'history' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'inspection' ? 'active' : null}><a href="/inspection" on:click={() => {active = 'inspection'}} class="waves-effect"><i class={`material-icons`}>local_see</i>Inspection Logs</a></li>
-        <li class={active === 'maintenance' ? 'active' : null}><a href="/maintenance" on:click={() => {active = 'maintenance'}} class="waves-effect"><i class={`material-icons`}>build</i>Maintenance Logs</a></li>
-        <li class={active === 'fuel-history' ? 'active' : null}><a href="/fuel-history" on:click={() => {active = 'fuel-history'}} class="waves-effect"><i class={`material-icons`}>local_gas_station</i>Fuel Logs</a></li>
+        <li class={active === 'inspection' ? 'active' : null}><a href="/history/inspection" on:click={() => {active = 'inspection'}} class="waves-effect"><i class={`material-icons`}>local_see</i>Inspection Logs</a></li>
+        <li class={active === 'maintenance' ? 'active' : null}><a href="/history/maintenance" on:click={() => {active = 'maintenance'}} class="waves-effect"><i class={`material-icons`}>build</i>Maintenance Logs</a></li>
+        <li class={active === 'fuel-history' ? 'active' : null}><a href="/history/fuel-history" on:click={() => {active = 'fuel-history'}} class="waves-effect"><i class={`material-icons`}>local_gas_station</i>Fuel Logs</a></li>
       </div>
     </li>
     <li class={mode === 'settings' ? 'active' : ''}>
       <div class="collapsible-header waves-effect" on:click={() => toggleMode('settings', 8)}><i class={`material-icons`}>settings</i>SETTINGS <i style="width: 100%; text-align: right; margin-right: 0;" class={`material-icons`}>{mode == 'settings' ? 'expand_more' : 'chevron_left'}</i></div>
       <div class="collapsible-body" style="background: #039be5;">
-        <li class={active === 'login' ? 'active' : null}><a href="/login" class="waves-effect"><i class={`material-icons`}>exit_to_app</i>Login</a></li>
-        <li class={active === 'register' ? 'active' : null}><a href="/register" class="waves-effect"><i class={`material-icons`}>person_add</i>Register</a></li>
+        <li class={active === 'login' ? 'active' : null}><a href="/settings/login" class="waves-effect"><i class={`material-icons`}>exit_to_app</i>Login</a></li>
+        <li class={active === 'register' ? 'active' : null}><a href="/settings/register" class="waves-effect"><i class={`material-icons`}>person_add</i>Register</a></li>
         {#if !token}
-          <li class={active === 'forgot-password' ? 'active' : null}><a href="/forgot-password" class="waves-effect"><i class={`material-icons`}>lock_open</i>Forgot Password</a></li>
+          <li class={active === 'forgot-password' ? 'active' : null}><a href="/settings/forgot-password" class="waves-effect"><i class={`material-icons`}>lock_open</i>Forgot Password</a></li>
         {/if}
       </div>
     </li>
