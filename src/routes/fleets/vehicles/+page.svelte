@@ -10,7 +10,7 @@
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
 
-  sidebarMode.set('business')
+  sidebarMode.set('fleets')
   sidebarActive.set('vehicles')
 
   let search = {
