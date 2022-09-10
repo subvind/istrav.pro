@@ -16,6 +16,7 @@
 		"axios": "^0.27.2",
 		"fleet-optimizer": "github:trabur/fleet-optimizer",
 		"gridjs": "^5.1.0",
+		"leaflet": "^1.8.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
