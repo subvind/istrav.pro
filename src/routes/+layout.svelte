@@ -41,14 +41,25 @@
 {#if loading}
   <!-- do nothing -->
 {:else}
-  <Navigation active={sidebarActiveId} mode={sidebarModeId} isOpen={sidebarIsOpen} />
-  <div class="detail" style={sidebarIsOpen ? 'padding-left: calc(300px);' : 'padding-left: 0;'}>
+  <Header isOpen={sidebarIsOpen}/>
+  <div class="layout row">
+    <div class="silo col s12 l3 xl3">
+      <Navigation active={sidebarActiveId} mode={sidebarModeId} isOpen={sidebarIsOpen} />
+    </div>
+    <div class="silo col s12 l9 xl9" style={sidebarIsOpen ? '' : 'width: 100%;'}>
+      <div class="content">
+        <slot></slot>
+      </div>
+      <Credits />
+    </div>
+  </div>
+  <!-- <div class="detail" style={sidebarIsOpen ? 'padding-left: calc(300px);' : 'padding-left: 0;'}>
     <Header isOpen={sidebarIsOpen}/>
     <div class="content">
       <slot></slot>
     </div>
     <Credits />
-  </div>
+  </div> -->
 {/if}
 
 <style global>
@@ -56,6 +67,15 @@
   
   :global(body) {
     background-color: #f4f4f4;
+  }
+
+  .layout {
+    margin: 0;
+  }
+
+  .layout .silo {
+    padding: 0;
+    overflow: hidden;
   }
 
   .detail {

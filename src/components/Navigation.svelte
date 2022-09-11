@@ -73,16 +73,15 @@
   }
 </script>
 
-<ul id="slide-out" class="sidenav sidenav-fixed" style="width: 300px;">
-  
-  <nav class="light-blue">
+<ul id="slide-out" class="sidenav sidenav-fixed">
+  <!-- <nav class="light-blue">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo center black-text" style="min-width: 150px;">isTrav Pro</a>
     </div>
-  </nav>
+  </nav> -->
 
   <div style="margin: 0.5em;">
-    <a href="/dashboard" class="btn btn-large white black-text" style="width: 100%;">
+    <a href="/dashboard" class="btn btn-large black white-text" style="width: 100%;">
       <i class="material-icons left">dashboard</i><span class="left">DASHBOARD</span><i class="material-icons right">chevron_right</i>
     </a>
   </div>
@@ -190,6 +189,9 @@
 <style>
   #slide-out {
     background: #03a9f4;
+    width: 25%;
+    min-width: 300px;
+    top: 64px;
   }
 
   .collapsible li {
