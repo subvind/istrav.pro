@@ -14,7 +14,7 @@
 		"@sveltejs/kit": "next",
 		"@types/uuid": "^8.3.4",
 		"axios": "^0.27.2",
-		"fleet-optimizer": "^1.0.2",
+		"fleet-optimizer": "^1.0.3",
 		"gridjs": "^5.1.0",
 		"leaflet": "^1.8.0",
 		"leaflet-routing-machine": "^3.2.12",

@@ -7,7 +7,6 @@
     <h1 class="title">One application with</h1>
     <h1 class="subtitle">many features</h1>
     <br />
-    <br />
   </div>
   <div class="row" style="padding: 0 1em;">
     <div class="col s12 l6 xl4">
@@ -37,6 +36,10 @@
         <a href="#!" class="collection-item">Alvin</a>
       </div>
     </div>
+  </div>
+  <div class="container">
+    <a href="/features" class="btn btn-large blue lighten-2">Roadmap</a>
+    <a href="/register" class="btn btn-large white black-text">Make a request</a>
   </div>
   <br />
   <br />

@@ -1,10 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import axios from 'axios'
+  import pro from 'fleet-optimizer'
+
   import { parseJwt } from '../parseJwt'
   import { backend } from '../stores'
 
+  let fleetOptimizer: any
   let token: any
   let api: any
   backend.subscribe(value => {
@@ -30,6 +32,8 @@
   }
 
   onMount(() => {
+    fleetOptimizer = pro.FleetOptimizer.getInstance()
+
     let tokenCode = localStorage.getItem('token')
     if (tokenCode) {
       token = parseJwt(tokenCode)
@@ -176,11 +180,13 @@
     </li>
   </ul>
   <li><div class="divider" style="margin: 0; background-color: #111;"></div></li>
-  <li>
-    <a href="https://github.com/trabur/istrav.pro" target="_blank">
-      <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">Beta Version</div>
-    </a>
-  </li>
+  {#if fleetOptimizer}
+    <li>
+      <a href="https://www.npmjs.com/package/fleet-optimizer" target="_blank">
+        <div style="font-size: 1em;color: #333; text-align: right; padding: 0 1em;">v{fleetOptimizer.version()}</div>
+      </a>
+    </li>
+  {/if}
   <br />
   <br />
   <br />
