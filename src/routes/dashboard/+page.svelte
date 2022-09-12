@@ -3,6 +3,7 @@
 
   import { backend, sidebarActive, sidebarMode } from '../../stores';
   import Map from '../../components/Map.svelte'
+  import Header from '../../components/dashboard/Header.svelte'
 
   let api
   backend.subscribe(value => {
@@ -12,6 +13,7 @@
   sidebarActive.set('')
 </script>
 
+<Header />
 <Map />
 <div class="container" style="margin-top: -10px;">
   <div class="card">

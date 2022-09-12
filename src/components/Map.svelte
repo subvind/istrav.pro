@@ -20,7 +20,7 @@
         L.latLng(30.1672, -97.7431),
       ],
       lineOptions: {
-        styles: [{color: 'black', opacity: 0.15, weight: 9}, {color: 'white', opacity: 0.8, weight: 10}, {color: 'red', opacity: 1, weight: 8}],
+        styles: [{color: 'black', opacity: 0.15, weight: 9}, {color: 'black', opacity: 1, weight: 5}, {color: '#03a9f4', opacity: 1, weight: 3}],
         addWaypoints: false,
       },
       show: false
@@ -37,7 +37,7 @@
 <style>
   @import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
   #map {
-    height: calc(90vh);
+    height: calc(50vh);
     width: 100%;
     -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
