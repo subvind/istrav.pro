@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import Banner from "../../../components/Banner.svelte";
+  import Banner from "$lib/Banner.svelte";
 
-  import Table from "../../../components/Table.svelte"
+  import Table from "$lib/Table.svelte"
   import * as gridjs from "gridjs";
 
   import { sidebarActive, sidebarMode } from '../../../stores';

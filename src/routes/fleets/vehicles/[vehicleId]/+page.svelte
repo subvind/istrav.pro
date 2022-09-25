@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import Banner from '../../../../components/Banner.svelte'
+  import Banner from '$lib/Banner.svelte'
 
   import { sidebarActive, sidebarMode } from '../../../../stores';
   import pro from 'fleet-optimizer'

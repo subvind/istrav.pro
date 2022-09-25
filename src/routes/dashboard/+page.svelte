@@ -2,9 +2,9 @@
   import { onMount } from 'svelte';
 
   import { backend, sidebarActive, sidebarMode } from '../../stores';
-  import Map from '../../components/Map.svelte'
-  import Header from '../../components/dashboard/Header.svelte'
-  import SubHeader from '../../components/dashboard/SubHeader.svelte'
+  import Map from '$lib/Map.svelte'
+  import Header from '$lib/dashboard/Header.svelte'
+  import SubHeader from '$lib/dashboard/SubHeader.svelte'
 
   let api
   backend.subscribe(value => {

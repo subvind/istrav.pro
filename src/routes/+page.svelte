@@ -5,8 +5,8 @@
   import pro from 'fleet-optimizer'
   import { v4 as uuidv4 } from 'uuid';
   
-  import FleetManagementSoftware from '../components/FleetManagementSoftware.svelte';
-  import Features from '../components/Features.svelte';
+  import FleetManagementSoftware from '$lib/FleetManagementSoftware.svelte';
+  import Features from '$lib/Features.svelte';
 
   sidebarMode.set('application')
   sidebarActive.set('intro')

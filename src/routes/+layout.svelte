@@ -4,9 +4,9 @@
   import { backend, sidebarVisibility, sidebarActive, sidebarMode } from '../stores.js';
   import pro from 'fleet-optimizer'
 
-  import Navigation from "../components/Navigation.svelte"
-  import Credits from "../components/Credits.svelte"
-  import Header from "../components/Header.svelte"
+  import Navigation from "$lib//Navigation.svelte"
+  import Credits from "$lib/Credits.svelte"
+  import Header from "$lib/Header.svelte"
 
   let loading = true
   let api = ''
